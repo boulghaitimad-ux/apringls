@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <title>EnglishPath C1 · Tu plan personal</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-icon">E</span><span>English<span class="brand-light">Path</span><small>YOUR ROUTE TO C1</small></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+    <nav id="nav">
+      <button class="nav-link active" data-view="dashboard">Inicio</button>
+      <button class="nav-link" data-view="learn">Aprender</button>
+      <button class="nav-link" data-view="practice">Practicar</button>
+      <button class="nav-link" data-view="roadmap">Ruta C1</button>
+    </nav>
+    <div class="top-progress"><span class="online-dot"></span> Cuenta: {{ username }} · progreso personal <form method="post" action="{{ url_for('logout') }}" style="display:inline;margin-left:10px"><button type="submit" style="cursor:pointer;border:0;background:transparent;color:inherit;text-decoration:underline;padding:0">Cerrar sesión</button></form></div>
+  </header>
+
+  <main class="container">
+    <section class="view active" id="dashboard">
+      <div class="welcome">
+        <div>
+          <div class="eyebrow">TU INGLÉS, TU RITMO</div>
+          <h1>Every day, a little <em>better.</em></h1>
+          <p>Construye una base sólida y avanza paso a paso hacia el C1.</p>
+          <button class="btn btn-primary" data-go="learn">Continuar aprendiendo <span>→</span></button>
+        </div>
+        <div class="welcome-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="planet">A<span>↗</span></div><div class="floating-card">LEVEL UP <b>✦</b></div></div>
+      </div>
+
+      <div class="stats-grid">
+        <article class="stat-card"><div class="stat-label">Racha de estudio <span>✧</span></div><div class="stat-value"><b id="streak">0</b> <small>días</small></div><div class="stat-note">Un poco cada día suma.</div></article>
+        <article class="stat-card"><div class="stat-label">XP acumulados <span>✦</span></div><div class="stat-value"><b id="xp">0</b> <small>XP</small></div><div class="mini-track"><span id="xpBar"></span></div></article>
+        <article class="stat-card"><div class="stat-label">Preguntas acertadas <span>✓</span></div><div class="stat-value"><b id="correctCount">0</b></div><div class="stat-note">Sigue practicando para mejorar.</div></article>
+      </div>
+
+      <div class="section-heading"><div><div class="eyebrow">TU PLAN DE HOY</div><h2>Tu misión de 45 minutos</h2></div><span class="subtle">Nivel inicial · frases desde cero</span></div>
+      <div class="routine-grid">
+        <article class="routine-card"><span class="routine-time">10 min</span><b>1. Teoría fácil</b><p>Una regla explicada en español, con ejemplos.</p></article>
+        <article class="routine-card"><span class="routine-time">10 min</span><b>2. Vocabulario</b><p>5–8 expresiones que puedas usar de verdad.</p></article>
+        <article class="routine-card"><span class="routine-time">10 min</span><b>3. Juega y practica</b><p>Completa frases, ordena palabras y corrige errores.</p></article>
+        <article class="routine-card"><span class="routine-time">10 min</span><b>4. Escucha y habla</b><p>Escucha algo breve y repite en voz alta.</p></article>
+        <article class="routine-card"><span class="routine-time">5 min</span><b>5. Repaso activo</b><p>Recuerda sin mirar y anota tus dudas.</p></article>
+      </div>
+      <div class="section-heading"><div><div class="eyebrow">PRACTICA A TU RITMO</div><h2>Construye una frase</h2></div><span class="subtle">Basado en tu temario</span></div>
+      <div class="builder-card">
+        <p>Empieza con una estructura sencilla. Elige las piezas y mira cómo se forma una frase correcta.</p>
+        <div class="builder-controls">
+          <label>Persona
+            <select id="builderSubject"><option value="I">I — yo</option><option value="You">You — tú / vosotros</option><option value="He">He — él</option><option value="She">She — ella</option><option value="We">We — nosotros</option><option value="They">They — ellos</option></select>
+          </label>
+          <label>Verbo o estructura
+            <select id="builderVerb"><option value="am">am (ser / estar)</option><option value="like">like (gustar)</option><option value="work">work (trabajar)</option><option value="study">study (estudiar)</option><option value="have">have (tener)</option></select>
+          </label>
+          <label>Complemento
+            <select id="builderObject"><option value="happy">happy — feliz</option><option value="English">English — inglés</option><option value="at home">at home — en casa</option><option value="a student">a student — estudiante</option><option value="every day">every day — todos los días</option></select>
+          </label>
+        </div>
+        <div class="builder-result"><span>YOUR SENTENCE</span><strong id="builderSentence">I am happy.</strong><p id="builderTranslation">Yo estoy feliz.</p></div>
+        <p class="builder-tip">Consejo: con <b>he / she</b>, en presente simple normalmente añadimos <b>-s</b> al verbo: <i>She works</i>.</p>
+      </div>
+      <div class="course-grid">
+        <button class="course-card" data-topic="grammar"><span class="course-icon purple">Aa</span><span class="course-meta">GRAMMAR · 10 MIN</span><b>Inglés técnico y laboral</b><span class="course-desc">Vocabulario de electricidad, gramática y situaciones de trabajo.</span><span class="course-footer">Empezar lección <i>↗</i></span></button>
+        <button class="course-card" data-topic="vocabulary"><span class="course-icon orange">文</span><span class="course-meta">VOCABULARY · 10 MIN</span><b>Vocabulario del temario</b><span class="course-desc">Profesiones, cualidades, ofertas de empleo y expresiones profesionales.</span><span class="course-footer">Empezar lección <i>↗</i></span></button>
+        <button class="course-card" data-topic="exam"><span class="course-icon green">✓</span><span class="course-meta">EXAM PRACTICE · 15 MIN</span><b>Entrenamiento de examen</b><span class="course-desc">Preguntas tipo test con explicación de cada respuesta.</span><span class="course-footer">Hacer ejercicio <i>↗</i></span></button>
+      </div>
+      <div class="quote-panel"><span class="quote-mark">“</span><div><b>Progress over perfection.</b><p>El objetivo no es no equivocarte: es entender por qué y hacerlo mejor la próxima vez.</p></div><span class="quote-tag">MINDSET</span></div>
+    </section>
+
+    <section class="view" id="learn">
+      <div class="eyebrow">LECCIÓN GUIADA</div><h1>Aprende con sentido.</h1><p class="page-intro">Lee la explicación, mira los ejemplos y luego comprueba si lo has entendido.</p>
+      <div class="lesson-layout">
+        <aside class="lesson-menu">
+          <div class="lesson-menu-title">EMPEZAMOS DESDE CERO</div>
+          <button class="lesson-choice selected" data-lesson="grammar">01 · Profesiones eléctricas</button>
+          <button class="lesson-choice" data-lesson="tobe">02 · Cualidades y contrarios</button>
+          <button class="lesson-choice" data-lesson="present">03 · Adverbios de frecuencia</button>
+          <button class="lesson-choice" data-lesson="questions">04 · Gustos y preferencias</button>
+          <button class="lesson-choice" data-lesson="vocabulary">05 · Relative clauses</button>
+          <button class="lesson-choice" data-lesson="c1">06 · Empleo y presentación</button>
+        </aside>
+        <article class="lesson-content" id="lessonContent"></article>
+      </div>
+    </section>
+
+    <section class="view" id="practice">
+      <div class="eyebrow">PRACTICE ZONE</div><h1>Entrena y aprende de tus errores.</h1><p class="page-intro">Practica el vocabulario y la gramática de tu PDF. Cada respuesta incluye una explicación sencilla.</p>
+      <div class="quiz-shell">
+        <div class="quiz-top"><span class="pill" id="quizCategory">GRAMMAR</span><span id="questionCounter">Pregunta 1</span></div>
+        <div class="quiz-track"><span id="quizBar"></span></div>
+        <h2 id="questionText">Cargando preguntas…</h2>
+        <p class="question-hint" id="questionHint">Elige la opción que completa la frase.</p>
+        <div class="options" id="options"></div>
+        <div class="feedback" id="feedback" hidden></div>
+        <div class="quiz-actions"><button class="btn btn-quiet" id="skipBtn">Saltar</button><button class="btn btn-primary" id="checkBtn">Comprobar respuesta →</button></div>
+      </div>
+    </section>
+
+    <section class="view" id="roadmap">
+      <div class="eyebrow">LONG-TERM GOAL</div><h1>Tu ruta hacia el C1.</h1><p class="page-intro">El nivel C1 se construye con práctica constante. Primero descubre tu nivel actual y luego avanza por etapas.</p>
+      <div class="roadmap">
+        <article class="road-item done"><span class="road-dot">✓</span><div><span class="course-meta">ETAPA 1 · A1–A2</span><h3>Construir los cimientos</h3><p>Frases cotidianas, tiempos básicos, preguntas, pronunciación y vocabulario frecuente.</p><span class="status">Base de aprendizaje disponible</span></div></article>
+        <article class="road-item"><span class="road-dot">2</span><div><span class="course-meta">ETAPA 2 · B1</span><h3>Comunicarte con autonomía</h3><p>Contar experiencias, explicar opiniones, entender textos generales y escribir textos conectados.</p><span class="status">Siguiente etapa</span></div></article>
+        <article class="road-item"><span class="road-dot">3</span><div><span class="course-meta">ETAPA 3 · B2</span><h3>Ganar precisión y fluidez</h3><p>Argumentar, usar estructuras variadas, comprender textos complejos y desarrollar writing.</p><span class="status">Objetivo intermedio</span></div></article>
+        <article class="road-item"><span class="road-dot">4</span><div><span class="course-meta">ETAPA 4 · C1</span><h3>Dominar el inglés avanzado</h3><p>Matices, collocations, registro formal, textos extensos, listening exigente y simulacros del examen elegido.</p><span class="status">Objetivo final</span></div></article>
+      </div>
+      <div class="note-box"><b>Tu plan realista</b><p>Con 45 minutos al día puedes progresar mucho, pero pasar de nivel básico a C1 suele ser un proyecto de largo recorrido. Como orientación, piensa en varios años de práctica constante, según tu punto de partida, la calidad de la práctica y cuánto inglés uses fuera de la web. No hay una fecha garantizada. Primero consolidaremos A1–A2 y haremos una prueba de nivel periódica; después ajustaremos el plan.</p></div>
+    </section>
+    <footer><span>EnglishPath <b>·</b> aprende a tu ritmo</span><span>Made for steady progress ✦</span></footer>
+  </main>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

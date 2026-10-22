@@ -1,0 +1,262 @@
+[
+  {
+    "id": 1,
+    "category": "Jobs",
+    "question": "What is “electrician” in Spanish?",
+    "hint": "Lee la frase y recuerda el vocabulario o la regla de tu temario.",
+    "options": [
+      "Ingeniero eléctrico",
+      "Electricista",
+      "Operario de central eléctrica"
+    ],
+    "answer": 1,
+    "explanation": "“Electrician” significa electricista."
+  },
+  {
+    "id": 2,
+    "category": "Jobs",
+    "question": "Who designs electrical systems, devices and components?",
+    "hint": "Lee la frase y recuerda el vocabulario o la regla de tu temario.",
+    "options": [
+      "An electrical engineer",
+      "A driver",
+      "A florist"
+    ],
+    "answer": 0,
+    "explanation": "El temario define al electrical engineer como la persona que diseña sistemas, dispositivos y componentes eléctricos."
+  },
+  {
+    "id": 3,
+    "category": "Jobs",
+    "question": "A power plant operator maintains…",
+    "hint": "Lee la frase y recuerda el vocabulario o la regla de tu temario.",
+    "options": [
+      "TV adverts",
+      "power plants that produce energy",
+      "solar panels only"
+    ],
+    "answer": 1,
+    "explanation": "Un power plant operator mantiene centrales eléctricas que producen energía."
+  },
+  {
+    "id": 4,
+    "category": "Qualities",
+    "question": "What is the opposite of “reliable”?",
+    "hint": "Lee la frase y recuerda el vocabulario o la regla de tu temario.",
+    "options": [
+      "Responsible",
+      "Unreliable",
+      "Polite"
+    ],
+    "answer": 1,
+    "explanation": "Reliable significa fiable; unreliable significa poco fiable."
+  },
+  {
+    "id": 5,
+    "category": "Qualities",
+    "question": "“Careful” means…",
+    "hint": "Lee la frase y recuerda el vocabulario o la regla de tu temario.",
+    "options": [
+      "Cuidadoso",
+      "Perezoso",
+      "Desordenado"
+    ],
+    "answer": 0,
+    "explanation": "Careful significa cuidadoso."
+  },
+  {
+    "id": 6,
+    "category": "Qualities",
+    "question": "Choose a positive quality for an electrician.",
+    "hint": "Lee la frase y recuerda el vocabulario o la regla de tu temario.",
+    "options": [
+      "Irresponsible",
+      "Dishonest",
+      "Hard-working"
+    ],
+    "answer": 2,
+    "explanation": "Hard-working significa trabajador; es una cualidad positiva en el texto."
+  },
+  {
+    "id": 7,
+    "category": "Frequency",
+    "question": "Which means “casi nunca”?",
+    "hint": "Lee la frase y recuerda el vocabulario o la regla de tu temario.",
+    "options": [
+      "Often",
+      "Hardly ever",
+      "Usually"
+    ],
+    "answer": 1,
+    "explanation": "Hardly ever significa casi nunca."
+  },
+  {
+    "id": 8,
+    "category": "Frequency",
+    "question": "Complete: “I ___ go to the cinema.” (a veces)",
+    "hint": "Lee la frase y recuerda el vocabulario o la regla de tu temario.",
+    "options": [
+      "sometimes",
+      "never",
+      "hardly ever"
+    ],
+    "answer": 0,
+    "explanation": "Sometimes significa a veces."
+  },
+  {
+    "id": 9,
+    "category": "Frequency",
+    "question": "Choose the natural sentence.",
+    "hint": "Lee la frase y recuerda el vocabulario o la regla de tu temario.",
+    "options": [
+      "I often ride a bike.",
+      "I ride often a bike.",
+      "Often I a bike ride."
+    ],
+    "answer": 0,
+    "explanation": "El adverbio de frecuencia normalmente va antes del verbo principal: I often ride…"
+  },
+  {
+    "id": 10,
+    "category": "Preferences",
+    "question": "“I prefer advert A because…” means…",
+    "hint": "Lee la frase y recuerda el vocabulario o la regla de tu temario.",
+    "options": [
+      "Prefiero el anuncio A porque…",
+      "Nunca leo anuncios.",
+      "Trabajo en el anuncio A."
+    ],
+    "answer": 0,
+    "explanation": "Prefer significa preferir; because significa porque."
+  },
+  {
+    "id": 11,
+    "category": "Relative clauses",
+    "question": "An electrician is a person ___ repairs appliances.",
+    "hint": "Lee la frase y recuerda el vocabulario o la regla de tu temario.",
+    "options": [
+      "where",
+      "who",
+      "when"
+    ],
+    "answer": 1,
+    "explanation": "Who se usa para referirse a personas."
+  },
+  {
+    "id": 12,
+    "category": "Relative clauses",
+    "question": "Madrid is the city ___ I live.",
+    "hint": "Lee la frase y recuerda el vocabulario o la regla de tu temario.",
+    "options": [
+      "whose",
+      "when",
+      "where"
+    ],
+    "answer": 2,
+    "explanation": "Where se usa para referirse a lugares."
+  },
+  {
+    "id": 13,
+    "category": "Relative clauses",
+    "question": "2011 was the year ___ we left school.",
+    "hint": "Lee la frase y recuerda el vocabulario o la regla de tu temario.",
+    "options": [
+      "when",
+      "who",
+      "whose"
+    ],
+    "answer": 0,
+    "explanation": "When se usa para referirse a un momento o periodo de tiempo."
+  },
+  {
+    "id": 14,
+    "category": "Relative clauses",
+    "question": "I know a girl ___ brother works for Google.",
+    "hint": "Lee la frase y recuerda el vocabulario o la regla de tu temario.",
+    "options": [
+      "where",
+      "whose",
+      "which"
+    ],
+    "answer": 1,
+    "explanation": "Whose expresa posesión: su hermano."
+  },
+  {
+    "id": 15,
+    "category": "Relative clauses",
+    "question": "Sony makes TVs ___ are good quality.",
+    "hint": "Lee la frase y recuerda el vocabulario o la regla de tu temario.",
+    "options": [
+      "which",
+      "when",
+      "who"
+    ],
+    "answer": 0,
+    "explanation": "Which se usa para cosas, como TVs."
+  },
+  {
+    "id": 16,
+    "category": "Job application",
+    "question": "“I worked as an assistant for one year” means…",
+    "hint": "Lee la frase y recuerda el vocabulario o la regla de tu temario.",
+    "options": [
+      "Trabajaré como ayudante un año.",
+      "Trabajé como ayudante durante un año.",
+      "Quiero ser ayudante."
+    ],
+    "answer": 1,
+    "explanation": "Worked es pasado de work; for one year indica durante un año."
+  },
+  {
+    "id": 17,
+    "category": "Job application",
+    "question": "Complete: “I want to work here ___ your company is an industry leader.”",
+    "hint": "Lee la frase y recuerda el vocabulario o la regla de tu temario.",
+    "options": [
+      "because",
+      "where",
+      "whose"
+    ],
+    "answer": 0,
+    "explanation": "Because significa porque y explica la razón."
+  },
+  {
+    "id": 18,
+    "category": "Job application",
+    "question": "Choose the correct phrase: “Me gusta reparar aparatos”.",
+    "hint": "Lee la frase y recuerda el vocabulario o la regla de tu temario.",
+    "options": [
+      "I like repair appliances.",
+      "I like repairing appliances.",
+      "I likes repairing appliances."
+    ],
+    "answer": 1,
+    "explanation": "Después de like, una acción puede ir en -ing: like repairing."
+  },
+  {
+    "id": 19,
+    "category": "Qualities",
+    "question": "What does “tidy” mean?",
+    "hint": "Lee la frase y recuerda el vocabulario o la regla de tu temario.",
+    "options": [
+      "Ordenado",
+      "Impaciente",
+      "Deshonesto"
+    ],
+    "answer": 0,
+    "explanation": "Tidy significa ordenado; untidy es desordenado."
+  },
+  {
+    "id": 20,
+    "category": "Relative clauses",
+    "question": "Which word usually refers to people?",
+    "hint": "Lee la frase y recuerda el vocabulario o la regla de tu temario.",
+    "options": [
+      "who",
+      "where",
+      "when"
+    ],
+    "answer": 0,
+    "explanation": "Who se refiere a personas."
+  }
+]
