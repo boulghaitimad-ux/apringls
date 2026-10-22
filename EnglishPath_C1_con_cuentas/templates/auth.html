@@ -1,3 +1,195 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{{ 'Crear cuenta' if mode == 'register' else 'Iniciar sesión' }} · EnglishPath C1"><style>
-*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:#101827;color:#f8fafc;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;padding:20px}.card{width:min(100%,430px);background:#192437;border:1px solid #344158;border-radius:22px;padding:32px;box-shadow:0 24px 70px #0004}.brand{font-size:22px;font-weight:800;margin-bottom:26px}.brand span{color:#8b9cff}.eyebrow{color:#a5b4fc;font-size:12px;letter-spacing:2px;font-weight:700}h1{font-size:30px;margin:10px 0}p{color:#b9c4d5;line-height:1.5}label{display:block;font-size:14px;margin:17px 0 7px;color:#dbe4f3}input{width:100%;padding:13px 14px;border:1px solid #46536a;border-radius:10px;background:#101827;color:white;font-size:16px}button{width:100%;border:0;border-radius:10px;padding:14px;margin-top:22px;background:#818cf8;color:#111827;font-size:16px;font-weight:800;cursor:pointer}.alt{text-align:center;margin-top:20px;font-size:14px}.alt a{color:#a5b4fc}.msg{padding:11px;border-radius:9px;background:#7f1d1d;color:#fee2e2;margin:12px 0;font-size:14px}
-</style></head><body><main class="card"><div class="brand">English<span>Path</span> C1</div><div class="eyebrow">TU INGLÉS, TU RITMO</div><h1>{{ 'Crea tu cuenta' if mode == 'register' else 'Bienvenido de nuevo' }}</h1><p>{{ 'Regístrate para guardar tu progreso personal.' if mode == 'register' else 'Inicia sesión para continuar aprendiendo.' }}</p>{% with messages = get_flashed_messages() %}{% for message in messages %}<div class="msg">{{ message }}</div>{% endfor %}{% endwith %}<form method="post">{% if mode == 'register' %}<label for="username">Nombre de usuario</label><input id="username" name="username" minlength="3" maxlength="30" autocomplete="username" required><label for="email">Correo electrónico</label><input id="email" name="email" type="email" autocomplete="email" required>{% else %}<label for="identity">Usuario o correo electrónico</label><input id="identity" name="identity" autocomplete="username" required>{% endif %}<label for="password">Contraseña</label><input id="password" name="password" type="password" autocomplete="current-password" required>{% if mode == 'register' %}<p style="font-size:12px">Usa una contraseña de al menos 8 caracteres.</p>{% endif %}<button type="submit">{{ 'Crear cuenta' if mode == 'register' else 'Iniciar sesión' }}</button></form><div class="alt">{% if mode == 'register' %}¿Ya tienes cuenta? <a href="{{ url_for('login') }}">Inicia sesión</a>{% else %}Acceso privado · EnglishPath C1{% endif %}</div></main></body></html>
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ 'Crear cuenta' if mode == 'register' else 'Iniciar sesión' }} · EnglishPath C1</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #101827;
+      color: #f8fafc;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+      padding: 20px;
+    }
+
+    .card {
+      width: min(100%, 430px);
+      background: #192437;
+      border: 1px solid #344158;
+      border-radius: 22px;
+      padding: 32px;
+      box-shadow: 0 24px 70px #0004;
+    }
+
+    .brand {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 26px;
+    }
+
+    .brand span {
+      color: #8b9cff;
+    }
+
+    .eyebrow {
+      color: #a5b4fc;
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: 30px;
+      margin: 10px 0;
+    }
+
+    p {
+      color: #b9c4d5;
+      line-height: 1.5;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      margin: 17px 0 7px;
+      color: #dbe4f3;
+    }
+
+    input {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #46536a;
+      border-radius: 10px;
+      background: #101827;
+      color: white;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      border: 0;
+      border-radius: 10px;
+      padding: 14px;
+      margin-top: 22px;
+      background: #818cf8;
+      color: #111827;
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #a5b4fc;
+    }
+
+    .alt {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .alt a {
+      color: #a5b4fc;
+    }
+
+    .msg {
+      padding: 11px;
+      border-radius: 9px;
+      background: #7f1d1d;
+      color: #fee2e2;
+      margin: 12px 0;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card">
+    <div class="brand">English<span>Path</span> C1</div>
+    <div class="eyebrow">TU INGLÉS, TU RITMO</div>
+
+    <h1>
+      {{ 'Crea tu cuenta' if mode == 'register' else 'Bienvenido de nuevo' }}
+    </h1>
+
+    <p>
+      {{ 'Regístrate para guardar tu progreso personal.' if mode == 'register' else 'Inicia sesión para continuar aprendiendo.' }}
+    </p>
+
+    {% with messages = get_flashed_messages() %}
+      {% for message in messages %}
+        <div class="msg">{{ message }}</div>
+      {% endfor %}
+    {% endwith %}
+
+    <form method="post">
+      {% if mode == 'register' %}
+        <label for="username">Nombre de usuario</label>
+        <input
+          id="username"
+          name="username"
+          minlength="3"
+          maxlength="30"
+          autocomplete="username"
+          required
+        >
+
+        <label for="email">Correo electrónico</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          required
+        >
+      {% else %}
+        <label for="identity">Usuario o correo electrónico</label>
+        <input
+          id="identity"
+          name="identity"
+          autocomplete="username"
+          required
+        >
+      {% endif %}
+
+      <label for="password">Contraseña</label>
+      <input
+        id="password"
+        name="password"
+        type="password"
+        autocomplete="current-password"
+        required
+      >
+
+      {% if mode == 'register' %}
+        <p style="font-size:12px">
+          Usa una contraseña de al menos 8 caracteres.
+        </p>
+      {% endif %}
+
+      <button type="submit">
+        {{ 'Crear cuenta' if mode == 'register' else 'Iniciar sesión' }}
+      </button>
+    </form>
+
+    <div class="alt">
+      {% if mode == 'register' %}
+        ¿Ya tienes cuenta?
+        <a href="{{ url_for('login') }}">Inicia sesión</a>
+      {% else %}
+        Acceso privado · EnglishPath C1
+      {% endif %}
+    </div>
+  </main>
+</body>
+</html>
